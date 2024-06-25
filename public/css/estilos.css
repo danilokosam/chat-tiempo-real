@@ -18,6 +18,9 @@ body {
   height: 100vh;
   padding: 36px 36px 100px 36px;
   grid-template-rows: 1fr;
+  background-color: #222;
+  color: white;
+  text-shadow: 1px 1px 7px white;
 }
 
 p {
@@ -36,6 +39,7 @@ small {
   height: 100%;
   scroll-behavior: smooth;
   padding-bottom: 48px;
+  scrollbar-width: thin;
 }
 
 #messages > li {
@@ -64,7 +68,7 @@ small {
   padding: 4px;
   position: absolute;
   right: 0;
-  margin-right: 15px;
+  margin-right: 17px;
 }
 
 #input {
