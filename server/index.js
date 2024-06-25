@@ -2,7 +2,15 @@ import express from "express";
 import logger from "morgan";
 import dotenv from "dotenv";
 import { createClient } from "@libsql/client";
+import path from "node:path";
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+console.log(__filename);
+
+console.log(__dirname);
 import { Server } from "socket.io";
 import { createServer } from "node:http";
 
@@ -11,6 +19,8 @@ dotenv.config();
 const port = process.env.PORT ?? 3000;
 
 const app = express();
+// Servir archivos estáticos desde la carpeta 'public'
+app.use(express.static(path.join(__dirname, "..", "public")));
 const server = createServer(app);
 const io = new Server(server, {
   connectionStateRecovery: {},
@@ -73,9 +83,11 @@ io.on("connection", async (socket) => {
 app.use(logger("dev"));
 
 app.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/client/index.html");
+  res.sendFile(process.cwd() + "/public/index.html");
 });
 
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+console.log(process.cwd());

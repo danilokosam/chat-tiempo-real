@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  padding: 36px 36px 100px 36px;
+  grid-template-rows: 1fr;
+}
+
+p {
+  margin: 0;
+}
+
+small {
+  padding: 0 0 0 300px;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  height: 100%;
+  scroll-behavior: smooth;
+  padding-bottom: 48px;
+}
+
+#messages > li {
+  padding: 0.5rem 1rem;
+}
+
+#messages > li:nth-child(odd) {
+  background: #453b3b;
+}
+
+#chat {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 500px;
+  height: 100%;
+  position: relative;
+}
+
+#form {
+  background-color: black;
+  bottom: 0;
+  display: flex;
+  height: 48px;
+  left: 0;
+  padding: 4px;
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+}
+
+#input {
+  border-radius: 9999px;
+  border: 1px solid #eee;
+  flex: 1;
+  margin: 4px;
+  padding: 0 8px;
+  width: 100%;
+}
+
+#input:focus {
+  outline: 0;
+}
+
+#form > button {
+  background: #09f;
+  color: #fff;
+  border: 0;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+#form > button:hover {
+  background: #0cf;
+}
